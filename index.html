@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mayara Dias - Hair Designer. Tratamentos personalizados de cabelo e unhas, horários, localização e redes sociais do salão.">
+  <meta name="theme-color" content="#fde4ea">
+  <title>Início - Mayara Dias Hair Designer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Biblioteca de ícones: cada símbolo é definido uma única vez e reutilizado com <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="icone-menu-hamburguer" viewBox="0 0 26 20">
+        <path d="M2 3h22M2 10h22M2 17h22" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="icone-seta-proxima" viewBox="0 0 22 18">
+        <path d="M1 9h19M12 1l8 8-8 8" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icone-estrela-decorativa" viewBox="0 0 24 24">
+        <path d="M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z" fill="#fde4ea" stroke="#2b0a4a" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icone-coracao-contorno" viewBox="0 0 24 22">
+        <path d="M12 20.5S2 14 2 7.5A5 5 0 0 1 12 5.5a5 5 0 0 1 10 2C22 14 12 20.5 12 20.5z" fill="none" stroke="#e77fb0" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icone-pin-de-localizacao" viewBox="0 0 22 28">
+        <g fill="none" stroke="#e77fb0" stroke-width="1.8">
+          <path d="M11 26S2 17 2 10.5a9 9 0 0 1 18 0C20 17 11 26 11 26z"/>
+          <circle cx="11" cy="10.5" r="3.5"/>
+        </g>
+      </symbol>
+
+      <symbol id="icone-whatsapp" viewBox="0 0 48 48">
+        <path d="M24 5C13.5 5 5 13.3 5 23.6c0 3.6 1 7 2.9 9.9L5 43l9.8-2.8a19.2 19.2 0 0 0 9.2 2.3c10.5 0 19-8.3 19-18.9S34.5 5 24 5z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17 15c-.8.9-1.6 2.1-1.2 4 .8 3.7 4.3 8.2 9.2 10.2 2 .8 3.6.5 4.7-.5.7-.7 1.1-1.5.8-2l-3.2-1.8-1.6 1.3c-2.7-1-4.7-3-5.8-5.6l1.3-1.6-1.6-3.3c-.5-.2-1.8.2-2.6 1.3z" fill="currentColor"/>
+      </symbol>
+
+      <symbol id="icone-tiktok" viewBox="0 0 40 40">
+        <rect width="40" height="40" rx="9" fill="#111"/>
+        <path d="M21.5 9v14.2a3.7 3.7 0 1 1-3.7-3.7M21.5 9c.3 3.1 2.3 5 5.5 5.2" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="icone-instagram" viewBox="0 0 40 40">
+        <g fill="none" stroke="#111" stroke-width="3">
+          <rect x="4" y="4" width="32" height="32" rx="9"/>
+          <circle cx="20" cy="20" r="7.5"/>
+        </g>
+        <circle cx="29.5" cy="10.5" r="1.5" fill="#111"/>
+      </symbol>
+
+      <symbol id="icone-facebook" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="19" fill="#111"/>
+        <path d="M22.5 36V23h4.2l.7-5h-4.9v-3c0-1.5.5-2.5 2.6-2.5h2.4V8.2c-.4-.1-2-.2-3.7-.2-3.7 0-6.1 2.2-6.1 6.2V18H13v5h4.7v13z" fill="#fde4ea"/>
+      </symbol>
+
+      <symbol id="icone-balao-de-conversa" viewBox="0 0 24 24">
+        <path d="M21 12a8 8 0 0 1-11.8 7L3 21l2-5.2A8 8 0 1 1 21 12z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icone-fechar" viewBox="0 0 22 22">
+        <path d="M3 3l16 16M19 3L3 19" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main class="aplicativo-do-salao">
+
+    <h1 class="somente-leitores-de-tela">Mayara Dias - Hair Designer</h1>
+
+    <!-- =====================================================
+         1. INÍCIO
+         ===================================================== -->
+    <section class="tela tela--inicio" id="home" tabindex="-1"
+             aria-labelledby="titulo-inicio" data-titulo-da-pagina="Início">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <header class="identidade-marca">
+        <p class="monograma" aria-hidden="true">M<b class="monograma__inicial-d">D</b></p>
+        <svg class="estrela-decorativa estrela-decorativa--ao-lado-do-monograma" width="20" height="20" aria-hidden="true"><use href="#icone-estrela-decorativa"/></svg>
+        <svg class="estrela-decorativa estrela-decorativa--ao-lado-do-retrato" width="20" height="20" aria-hidden="true"><use href="#icone-estrela-decorativa"/></svg>
+
+        <p class="identidade-marca__nome">MAYARA DIAS</p>
+        <p class="identidade-marca__profissao">HAIR DESIGNER</p>
+
+        
+
+      <h2 class="chamada-principal" id="titulo-inicio">
+        O seu sorriso
+        <em class="chamada-principal__destaque">faz o nosso dia!</em>
+      </h2>
+      <hr class="divisor-decorativo">
+
+      <p class="texto-apresentacao">Cuidar da sua saúde e da sua autoestima é a nossa prioridade. Oferecemos tratamentos personalizados para que você sorria com total confiança e leveza.</p>
+
+      <figure class="vitrine-unhas">
+        <img src="imagens/unhas-decoradas.png" alt="Mãos com unhas decoradas em tons de vinho, branco e dourado">
+      </figure>
+
+      <aside class="convite-estrutura">
+        <svg class="convite-estrutura__coracao" width="30" height="26" aria-hidden="true"><use href="#icone-coracao-contorno"/></svg>
+        <p class="convite-estrutura__texto">Venha conhecer nossa estrutura e viva uma experiência acolhedora do início ao fim.</p>
+      </aside>
+
+      <a class="agendamento-whatsapp" href="https://wa.me/5511999237332" target="_blank" rel="noopener">
+        <svg class="agendamento-whatsapp__icone" width="54" height="54" aria-hidden="true"><use href="#icone-whatsapp"/></svg>
+        <strong class="agendamento-whatsapp__chamada">Agende seu horário!</strong>
+      </a>
+
+      <a class="botao-prosseguir" href="#portfolio" rel="next">PROSSEGUIR</a>
+
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         2. PORTFÓLIO
+         ===================================================== -->
+    <section class="tela" id="portfolio" tabindex="-1" hidden
+             aria-labelledby="titulo-portfolio" data-titulo-da-pagina="Nossos trabalhos">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <a class="link-voltar" href="#home" rel="prev" aria-label="Voltar">&#8249;</a>
+      <h2 class="titulo-da-pagina" id="titulo-portfolio">Nossos Trabalhos</h2>
+
+      <section class="categoria-trabalho categoria-trabalho--cortes" aria-labelledby="rotulo-cortes">
+        <h3 class="categoria-trabalho__rotulo" id="rotulo-cortes">Cortes</h3>
+        <article class="trabalho">
+          <figure class="trabalho__imagem">
+            <img src="imagens/cortes.jpg" alt="Corte de cabelo reto com pontas suaves">
+          </figure>
+          <p class="trabalho__descricao">Corte reto com pontas suaves. elegante e prático.</p>
+        </article>
+      </section>
+
+      <section class="categoria-trabalho categoria-trabalho--coloracao" aria-labelledby="rotulo-coloracao">
+        <h3 class="categoria-trabalho__rotulo" id="rotulo-coloracao">Coloração</h3>
+        <article class="trabalho trabalho--imagem-a-direita">
+          <figure class="trabalho__imagem">
+            <img src="imagens/coloracao-tons.jpg" alt="Cartela com tons de coloração, do loiro ao vinho">
+          </figure>
+          <p class="trabalho__descricao">Tons personalizados. cor ideal para você.</p>
+        </article>
+      </section>
+
+      <section class="categoria-trabalho categoria-trabalho--penteados" aria-labelledby="rotulo-penteados">
+        <h3 class="categoria-trabalho__rotulo" id="rotulo-penteados">Penteados</h3>
+        <article class="trabalho">
+          <figure class="trabalho__imagem">
+            <img src="imagens/penteado-semi-preso.png" alt="Penteado semi-preso com ondas soltas">
+          </figure>
+          <p class="trabalho__descricao">Penteado semi-preso. elegante e versátil</p>
+        </article>
+      </section>
+
+      <a class="link-proxima-pagina" href="#historia" rel="next" aria-label="Próxima página">
+        <svg width="22" height="18" aria-hidden="true"><use href="#icone-seta-proxima"/></svg>
+      </a>
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         3. HISTÓRIA
+         ===================================================== -->
+    <section class="tela" id="historia" tabindex="-1" hidden
+             aria-labelledby="titulo-historia" data-titulo-da-pagina="Sobre mim">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <a class="link-voltar link-voltar--historia" href="#portfolio" rel="prev" aria-label="Voltar">&#8249;</a>
+      <p class="indicador-de-secao">Sobre Mim</p>
+
+      <article class="biografia">
+        <h2 class="biografia__titulo" id="titulo-historia">Conheça a Mayara</h2>
+        <p class="biografia__paragrafo">A trajetória de Mayara Dias é a de uma mulher que construiu sua história com muita humildade, dedicação e determinação. Desde o início de sua caminhada, sempre valorizou o respeito e a vontade de conquistar seus objetivos.</p>
+        <p class="biografia__paragrafo">Com o passar dos anos, Mayara enfrentou desafios e aprendeu com cada experiência. Sua simplicidade e a forma de tratar as pessoas com carinho fizeram parte de sua trajetória e ajudaram a construir a mulher forte e batalhadora que é hoje.</p>
+        <p class="biografia__paragrafo">Movida pelo sonho de trabalhar com beleza e transformar a autoestima das pessoas, Mayara conquistou seu espaço e se tornou dona de seu próprio salão de beleza. Hoje, seu salão representa não apenas um negócio, mas também o resultado de muito esforço, sonhos e perseverança.</p>
+        <figure class="biografia__retrato">
+          <img src="imagens/mayara-sorrindo.png" alt="Mayara Dias sorrindo, de cabelo preto e liso">
+        </figure>
+      </article>
+
+      <a class="link-proxima-pagina" href="#horario" rel="next" aria-label="Próxima página">
+        <svg width="22" height="18" aria-hidden="true"><use href="#icone-seta-proxima"/></svg>
+      </a>
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         4. HORÁRIO E LOCALIZAÇÃO
+         ===================================================== -->
+    <section class="tela" id="horario" tabindex="-1" hidden
+             aria-labelledby="titulo-horario" data-titulo-da-pagina="Horário e localização">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <a class="link-voltar" href="#historia" rel="prev" aria-label="Voltar">&#8249;</a>
+      <h2 class="titulo-horario-e-localizacao" id="titulo-horario">Horário e <br>Localização</h2>
+
+      <section class="cartao-localizacao" aria-labelledby="titulo-onde-estamos">
+        <h3 class="cartao-localizacao__titulo" id="titulo-onde-estamos">Onde Estamos</h3>
+        <svg class="cartao-localizacao__pin" width="22" height="28" aria-hidden="true"><use href="#icone-pin-de-localizacao"/></svg>
+
+        <address class="cartao-localizacao__endereco">
+          <p>Rua: Benedito Dias Siqueira</p>
+          <p>nº 315</p>
+        </address>
+
+      
+        <p class="cartao-localizacao__horario">De segunda a sexta das <time datetime="08:00">8:00</time> as <time datetime="18:00">18:00</time></p>
+        <p class="cartao-localizacao__horario">sábado das <time datetime="08:00">8:00</time> ate as <time datetime="14:00">14:00</time></p>
+      </section>
+
+      
+
+      
+      <figure class="mapa-do-salao">
+        <iframe class="mapa-do-salao__quadro"
+                title="Mapa com a localização do salão: Rua Benedito Dias Siqueira, 315"
+                src="https://www.google.com/maps?q=Rua+Benedito+Dias+Siqueira,+315&amp;hl=pt-BR&amp;z=17&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+        <a class="mapa-do-salao__link" href="https://www.google.com/
+        /search/?api=1&amp;query=Rua+Benedito+Dias+Siqueira,+315" target="_blank" rel="noopener">Abrir no Google Maps</a>
+      </figure>
+
+      <a class="link-proxima-pagina" href="#redes" rel="next" aria-label="Próxima página">
+        <svg width="22" height="18" aria-hidden="true"><use href="#icone-seta-proxima"/></svg>
+      </a>
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         5. REDES SOCIAIS
+         ===================================================== -->
+    <section class="tela" id="redes" tabindex="-1" hidden
+             aria-labelledby="titulo-redes" data-titulo-da-pagina="Redes sociais">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <a class="link-voltar" href="#horario" rel="prev" aria-label="Voltar">&#8249;</a>
+      <h2 class="titulo-redes-sociais" id="titulo-redes">NOS ACOMPANHE NAS REDES SOCIAIS</h2>
+      <svg class="estrela-decorativa estrela-decorativa--redes-superior" width="36" height="36" aria-hidden="true"><use href="#icone-estrela-decorativa"/></svg>
+
+      <ul class="lista-redes-sociais">
+        <li class="lista-redes-sociais__item">
+          <a class="link-rede-social" href="https://wa.me/5511999237332" target="_blank" rel="noopener">
+            <svg class="link-rede-social__icone link-rede-social__icone--whatsapp" width="40" height="40" aria-hidden="true"><use href="#icone-whatsapp"/></svg>
+            1199923-7332
+          </a>
+        </li>
+        <li class="lista-redes-sociais__item">
+          <a class="link-rede-social" href="https://www.tiktok.com/@mayara008" target="_blank" rel="noopener">
+            <svg class="link-rede-social__icone" width="40" height="40" aria-hidden="true"><use href="#icone-tiktok"/></svg>
+            mayara008
+          </a>
+        </li>
+        <li class="lista-redes-sociais__item">
+          <a class="link-rede-social" href="https://www.instagram.com/mayara_dias77" target="_blank" rel="noopener">
+            <svg class="link-rede-social__icone" width="40" height="40" aria-hidden="true"><use href="#icone-instagram"/></svg>
+            mayara_dias77
+          </a>
+        </li>
+        <li class="lista-redes-sociais__item">
+          <a class="link-rede-social" href="https://www.facebook.com/mayaradiasll" target="_blank" rel="noopener">
+            <svg class="link-rede-social__icone" width="40" height="40" aria-hidden="true"><use href="#icone-facebook"/></svg>
+            mayaradiasll
+          </a>
+        </li>
+      </ul>
+
+      <p class="lema-do-salao">A SUA BELEZA<br>É NOSSO OBJETIVO!</p>
+      <svg class="estrela-decorativa estrela-decorativa--redes-inferior" width="36" height="36" aria-hidden="true"><use href="#icone-estrela-decorativa"/></svg>
+
+      <a class="link-proxima-pagina" href="#faq" rel="next" aria-label="Próxima página">
+        <svg width="22" height="18" aria-hidden="true"><use href="#icone-seta-proxima"/></svg>
+      </a>
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         6. PERGUNTAS E AVALIAÇÕES (FAQ)
+         ===================================================== -->
+    <section class="tela" id="faq" tabindex="-1" hidden
+             aria-labelledby="titulo-avaliacoes" data-titulo-da-pagina="Avaliações dos clientes">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <a class="link-voltar" href="#redes" rel="prev" aria-label="Voltar">&#8249;</a>
+
+      <header class="assinatura-do-salao">
+        <p class="assinatura-do-salao__nome">Mayara Dias</p>
+        <p class="assinatura-do-salao__lema">Beleza e Bem-Estar</p>
+      </header>
+
+      <h2 class="titulo-avaliacoes" id="titulo-avaliacoes">Avaliação dos clientes</h2>
+      <p class="subtitulo-avaliacoes">O que nossos clientes dizem sobre nosso trabalho</p>
+
+      <article class="avaliacao-cliente avaliacao-cliente--leticia">
+        <header class="avaliacao-cliente__autor">Leticia costa</header>
+        <p class="avaliacao-cliente__nota" role="img" aria-label="Nota 5 de 5 estrelas">★★★★★</p>
+        <blockquote class="avaliacao-cliente__depoimento">
+          <p>adorei o atendimento no salão de Beleza Mayara Dias! Profissionais muito atencioso, ambiente agradavel e um trabalho feito com capricho.</p>
+        </blockquote>
+      </article>
+
+      <article class="avaliacao-cliente avaliacao-cliente--maria">
+        <header class="avaliacao-cliente__autor">Maria oliveira</header>
+        <p class="avaliacao-cliente__nota" role="img" aria-label="Nota 5 de 5 estrelas">★★★★★</p>
+        <blockquote class="avaliacao-cliente__depoimento">
+          <p>A mayara é muito querida e atenciosa! Sai do salão me sentindo uma outra pessoa. amei!</p>
+        </blockquote>
+      </article>
+
+      <article class="avaliacao-cliente avaliacao-cliente--ana">
+        <header class="avaliacao-cliente__autor">Ana beatriz</header>
+        <p class="avaliacao-cliente__nota" role="img" aria-label="Nota 5 de 5 estrelas">★★★★★</p>
+        <blockquote class="avaliacao-cliente__depoimento">
+          <p>profissional excelente, ambiente agradavel e serviço feito com muito cuidado. Recomendo demais!</p>
+        </blockquote>
+      </article>
+
+      <a class="botao-fazer-pergunta" href="https://wa.me/5511999237332" target="_blank" rel="noopener">
+        <svg width="14" height="14" aria-hidden="true"><use href="#icone-balao-de-conversa"/></svg>
+        Faça sua pergunta
+      </a>
+
+      <nav class="rodape-menu" aria-label="Atalho para o menu">
+        <a class="rodape-menu__link" href="#menu">Menu <svg width="22" height="18" aria-hidden="true"><use href="#icone-menu-hamburguer"/></svg></a>
+      </nav>
+    </section>
+
+    <!-- =====================================================
+         7. MENU ABERTO
+         ===================================================== -->
+    <section class="tela tela--menu-aberto" id="menu" tabindex="-1" hidden
+             aria-label="Menu de navegação" data-titulo-da-pagina="Menu">
+
+      <header class="barra-status" aria-hidden="true">
+        <time class="barra-status__hora" datetime="09:41">9:41</time>
+        <svg class="barra-status__icones" width="56" height="12" viewBox="0 0 56 12">
+          <g class="barra-status__sinal-de-rede" fill="#000">
+            <rect class="barra-status__barra-de-sinal" x="0" y="7" width="3" height="4" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="4.5" y="5" width="3" height="6" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="9" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect class="barra-status__barra-de-sinal" x="13.5" y="0" width="3" height="11" rx="1"/>
+          </g>
+          <g class="barra-status__wifi">
+            <path class="barra-status__wifi-arco" d="M21 3.5a10 10 0 0 1 14 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <path class="barra-status__wifi-arco" d="M23.5 6a6.5 6.5 0 0 1 9 0" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+            <circle class="barra-status__wifi-ponto" cx="28" cy="9" r="1" fill="#000"/>
+          </g>
+          <rect class="barra-status__bateria-contorno" x="38.5" y="0.5" width="15" height="11" rx="3" fill="none" stroke="#000" opacity=".4"/>
+          <rect class="barra-status__bateria-carga" x="40" y="2" width="12" height="8" rx="2" fill="#000"/>
+        </svg>
+      </header>
+
+      <nav class="menu-principal" aria-label="Páginas do site">
+        <ul class="menu-principal__lista">
+          <li class="menu-principal__item"><a class="menu-principal__link" href="#home">inicio</a></li>
+          <li class="menu-principal__item"><a class="menu-principal__link" href="#portfolio">portfolio</a></li>
+          <li class="menu-principal__item"><a class="menu-principal__link" href="#horario">horario/local</a></li>
+          <li class="menu-principal__item"><a class="menu-principal__link" href="#redes">redes sociais</a></li>
+          <li class="menu-principal__item"><a class="menu-principal__link" href="#faq">faq</a></li>
+        </ul>
+      </nav>
+
+      <a class="menu-principal__fechar" href="#home" aria-label="Fechar menu">
+        <svg width="22" height="22" aria-hidden="true"><use href="#icone-fechar"/></svg>
+      </a>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

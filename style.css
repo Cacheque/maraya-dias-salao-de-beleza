@@ -1,0 +1,606 @@
+/* =========================================================
+   Mayara Dias - Hair Designer  |  style.css
+   Convenção de nomes: bloco__elemento--modificador (BEM),
+   em português, descrevendo o PAPEL de cada parte do site.
+   Tela base: 352px de largura (formato celular).
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Playfair+Display:wght@400;500;700&family=Instrument+Serif&family=Inter:wght@400;500&family=Italiana&family=Oswald:wght@300&family=Great+Vibes&display=swap");
+
+/* ---------------------------------------------------------
+   1. Identidade visual (cores e fontes)
+   --------------------------------------------------------- */
+html {
+  --cor-fundo-rosa-claro: #fde4ea;
+  --cor-rodape-rosa-medio: #f4b6c8;
+  --cor-botao-rosa: #f9a8c0;
+  --cor-botao-rosa-destacado: #f58fb0;
+  --cor-vinho-principal: #8b3a55;
+  --cor-vinho-escurecido: #722e45;
+  --cor-roxo-destaque: #8a3b9c;
+  --cor-azul-profundo: #2b0a7a;
+  --cor-texto-principal: #111;
+  --cor-fundo-neutro: #e9e9e9;
+
+  --fonte-texto-corrido: 'Inter', Arial, sans-serif;
+  --fonte-marca-fina: 'Italiana', serif;
+  --fonte-titulo-elegante: 'Instrument Serif', 'Playfair Display', serif;
+  --fonte-serifada-classica: 'Playfair Display', serif;
+  --fonte-italica-delicada: 'Cormorant Garamond', serif;
+  --fonte-tecnica-destaque: 'Chakra Petch', sans-serif;
+  --fonte-condensada-leve: 'Oswald', 'Antonio', sans-serif;
+  --fonte-assinatura-manuscrita: 'Great Vibes', cursive;
+  --fonte-georgia: Georgia, 'Times New Roman', serif;
+
+  --espessura-borda-tela: 2px;
+}
+
+/* ---------------------------------------------------------
+   2. Base da página
+   --------------------------------------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  background: var(--cor-fundo-neutro);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-texto-corrido);
+}
+
+a { color: inherit; text-decoration: none; }
+a:focus-visible {
+  outline: 2px solid var(--cor-azul-profundo);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+ul { list-style: none; }
+img { display: block; }
+address { font-style: normal; }
+em { font-style: inherit; }
+b, strong { font-weight: inherit; }
+
+[hidden] { display: none !important; }
+
+/* Texto disponível apenas para leitores de tela */
+.somente-leitores-de-tela {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+   3. Estrutura de cada tela do aplicativo
+   --------------------------------------------------------- */
+.aplicativo-do-salao { width: 352px; }
+
+.tela {
+  position: relative;
+  width: 352px;
+  min-height: var(--altura-minima-da-tela, 760px);
+  padding-bottom: 60px;
+  overflow: hidden;
+  background: var(--cor-fundo-rosa-claro);
+}
+.tela:focus { outline: none; }
+
+.tela--inicio,
+.tela--menu-aberto { height: var(--altura-minima-da-tela, 760px); padding-bottom: 0; }
+
+/* ---------------------------------------------------------
+   4. Peças comuns a várias telas
+   --------------------------------------------------------- */
+
+/* Barra de status do celular (apenas decorativa) */
+.barra-status { position: absolute; top: 0; left: 0; right: 0; height: 24px; pointer-events: none; }
+.barra-status__hora {
+  position: absolute; top: 10px; left: 14px;
+  width: 50px; height: 14px;
+  border-radius: 999px;                 /* pílula: as duas pontas arredondadas */
+  background: #000; color: #fff;
+  font-size: 11px; font-weight: 600; line-height: 14px; text-align: center;
+}
+.barra-status__icones { position: absolute; top: 9px; right: 8px; }
+
+/* Navegação entre telas */
+.link-voltar {
+  position: absolute; top: 40px; left: 14px;
+  font-size: 22px; line-height: 1;
+}
+.link-voltar--historia { top: 36px; }
+
+.link-proxima-pagina { position: absolute; bottom: 46px; right: 16px; }
+
+.rodape-menu {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 36px;
+  background: var(--cor-rodape-rosa-medio);
+}
+.rodape-menu__link {
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  height: 100%; padding-right: 20px;
+  font-family: var(--fonte-serifada-classica);
+  font-size: 23px; font-weight: 700;
+}
+
+/* Estrelas decorativas */
+.estrela-decorativa { position: absolute; }
+.estrela-decorativa--ao-lado-do-monograma { top: 38px; left: 62px; }
+.estrela-decorativa--ao-lado-do-retrato { top: 72px; left: 232px; }
+.estrela-decorativa--redes-superior { top: 48px; right: 6px; }
+.estrela-decorativa--redes-inferior { bottom: 70px; left: 2px; }
+
+/* Título padrão de página interna */
+.titulo-da-pagina {
+  padding-top: 70px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 22px; font-weight: 600; letter-spacing: .5px; text-align: center;
+}
+
+/* ---------------------------------------------------------
+   5. Tela: INÍCIO
+   --------------------------------------------------------- */
+.monograma {
+  position: absolute; top: 38px; left: 6px;
+  color: #a0189b;
+  font-family: var(--fonte-serifada-classica);
+  font-size: 54px; line-height: 1; letter-spacing: -3px;
+}
+.monograma__inicial-d { position: relative; top: 12px; left: -10px; }
+.monograma::after {
+  content: '';
+  position: absolute; left: 28px; bottom: -4px;
+  width: 32px; height: 4px;
+}
+
+.identidade-marca__nome,
+.identidade-marca__profissao {
+  position: absolute; left: 74px; width: 160px; text-align: center;
+}
+.identidade-marca__nome {
+  top: 46px;
+  color: #1d1d1d;
+  font-family: var(--fonte-marca-fina);
+  font-size: 25px; line-height: 1.1; letter-spacing: .5px;
+}
+.identidade-marca__profissao {
+  top: 74px;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+  color: #333;
+  font-family: var(--fonte-serifada-classica);
+  font-size: 9px; letter-spacing: 1px;
+}
+.identidade-marca__profissao::before,
+.identidade-marca__profissao::after {
+  content: ''; flex: 1; height: 3px; background: #7a4a5c;
+}
+
+.retrato-perfil {
+   position: absolute; top: 37px; right: 3px;
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  border: 4px solid #8a1f8f;
+  overflow: hidden;
+  background: #5a3a4a;
+}
+.retrato-perfil img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.retrato-perfil img { width: 100%; height: 100%; object-fit: cover; }
+
+.chamada-principal {
+  position: absolute; top: 134px; left: 30px;
+  font-family: var(--fonte-titulo-elegante);
+  font-size: 40px; font-weight: 400; line-height: 1;
+}
+.chamada-principal__destaque {
+  display: block; margin: 2px 0 0 -8px;
+  color: var(--cor-roxo-destaque);
+  font-family: var(--fonte-italica-delicada);
+  font-size: 42px; font-style: italic; font-weight: 500; line-height: 1;
+}
+
+.divisor-decorativo {
+  position: absolute; top: 240px; left: 25px;
+  width: 66px; height: 3px;
+  border: 0; background: var(--cor-azul-profundo);
+}
+
+.texto-apresentacao {
+  position: absolute; top: 266px; left: 13px;
+  width: 300px;
+  font-family: georgia, 'Times New Roman', serif;
+  font-size: 14px; font-weight: 600; line-height: 19px;
+}
+
+.vitrine-unhas {
+  position: absolute; top: 355px; left: 14px;
+  width: 170px; height: 170px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #d6336c;
+}
+.vitrine-unhas img { width: 100%; height: 100%; object-fit: cover; }
+
+.convite-estrutura {
+  position: absolute; top: 374px; left: 212px;
+  height: 138px;
+  border-left: 4px solid var(--cor-azul-profundo);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px; font-weight: 600; line-height: 19px;
+
+}
+.convite-estrutura__coracao { position: absolute; top: -4px; left: 8px; }
+.convite-estrutura__texto {
+  position: absolute; top: 30px; left: 11px;
+  width: 124px;
+  font-size: 14px; line-height: 20px;
+  margin-right: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.agendamento-whatsapp {
+  position: absolute; top: 565px; left: 12px;
+  display: flex; align-items: center;
+}
+.agendamento-whatsapp__icone { color: #c9879a; }
+.agendamento-whatsapp__chamada {
+  display: flex; align-items: center;
+  height: 54px; margin-left: 6px; padding-left: 13px;
+  border-left: 3px solid #8b4a5e;
+  font-size: 21px; font-weight: 400;
+}
+
+.botao-prosseguir {
+  position: absolute; top: 628px; left: 50px;
+  display: flex; align-items: center; justify-content: center;
+  width: 252px; height: 44px;
+  border-radius: 22px;
+  background: var(--cor-vinho-principal); color: #fff;
+  font-size: 15px;
+  transition: background .2s;
+}
+.botao-prosseguir:hover { background: var(--cor-vinho-escurecido); }
+
+/* ---------------------------------------------------------
+   6. Tela: PORTFÓLIO
+   --------------------------------------------------------- */
+.categoria-trabalho__rotulo {
+  margin: 14px 0 4px 26px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 16px; font-weight: 500;
+}
+.categoria-trabalho--coloracao .categoria-trabalho__rotulo { margin-top: 26px; margin-left: 180px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.categoria-trabalho--penteados .categoria-trabalho__rotulo { margin-top: 34px; font-family: Georgia, 'Times New Roman', Times, serif; }
+
+.trabalho { display: flex; align-items: center; gap: 12px; padding: 0 14px; }
+.trabalho--imagem-a-direita { flex-direction: row-reverse; justify-content: space-between; }
+
+.trabalho__imagem { flex: none; width: 94px; height: 94px; overflow: hidden; background: #8a6a4a; }
+.trabalho__imagem img { width: 100%; height: 100%; object-fit: cover; }
+.categoria-trabalho--coloracao .trabalho__imagem { width: 104px; height: 74px; margin-right: 70px; background: #b0452a; }
+.categoria-trabalho--penteados .trabalho__imagem { width: 120px; height: 110px; background: #b08a6a; }
+
+.trabalho__descricao { width: 130px; font-size: 14px; line-height: 17px; font-family: Georgia, 'Times New Roman', Times, serif; }
+.trabalho--imagem-a-direita .trabalho__descricao { width: 120px; margin-left: 4px; }
+
+/* ---------------------------------------------------------
+   7. Tela: HISTÓRIA
+   --------------------------------------------------------- */
+.indicador-de-secao {
+  position: absolute; top: 56px; left: 14px;
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 12px; font-weight: 600;
+}
+.indicador-de-secao::after {
+  content: ''; width: 22px; height: 2px; background: var(--cor-azul-profundo);
+}
+
+.biografia { padding: 82px 14px 0; }
+.biografia__titulo {
+  margin-left: 20px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 15px; font-weight: 600; letter-spacing: .3px;
+  text-align: center; 
+}
+.biografia__paragrafo { margin-top: 6px; font-size: 12px; line-height: 10.2px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; margin-left: 20px; margin-right: 20px; }
+.biografia__retrato { width: 118px; height: 148px; margin-left: 100px; margin-top: 40px; overflow: hidden; background: #6a4a3a; }
+.biografia__retrato img { width: 100%; height: 120%; object-fit: cover; }
+
+/* ---------------------------------------------------------
+   8. Tela: HORÁRIO E LOCALIZAÇÃO
+   --------------------------------------------------------- */
+.titulo-horario-e-localizacao {
+  padding: 70px 14px 0 18px;
+  font-family: georgia, 'Times New Roman', Times, serif;
+  font-size: 30px; font-weight: 400; line-height: 40px; letter-spacing: .5px;
+  text-transform: uppercase;
+  text-align: center;
+  
+}
+
+.cartao-localizacao {
+  position: relative;
+  width: 316px; margin: 12px 0 0 6px; padding: 6px 8px 12px;
+  border-radius: 12px;
+  background:lightpink;
+  font-size: 12px; font-weight: 500; line-height: 22px;
+  font-weight: bold;
+  margin-left: 20px;
+  text-align: center;
+
+}
+.cartao-localizacao__titulo {
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 13px; font-style: italic; font-weight: 600;
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-align: center;   /* "Onde Estamos" centralizado no cartão */
+}
+.cartao-localizacao__pin { position: absolute; top: 4px; right: 8px; }
+
+.fachada-do-salao {
+  width: 200px; height: 155px; margin: 20px 0 0 10px;
+  overflow: hidden;
+  background: #333;
+  margin-left: 30px;
+
+  
+}
+.fachada-do-salao img { width: 100%; height: 100%; object-fit: cover;                                                                                                                          }
+
+/* Mapa personalizado do Google Maps (tom rosa, combinando com o site) */
+.mapa-do-salao {
+  position: relative;
+  width: 300px; margin: 16px 0 0 6px;
+  border: 3px solid var(--cor-rodape-rosa-medio);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  height: 180px;
+  margin-left: 30px;
+
+}
+.mapa-do-salao__quadro {
+  display: block;
+  width: 100%; height: 170px;
+  border: 0;
+  filter: grayscale(.25) sepia(.35) hue-rotate(300deg) saturate(1.5);
+}
+.mapa-do-salao__link {
+  position: absolute; right: 6px; bottom: 6px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--cor-vinho-principal); color: #fff;
+  font-size: 10px; line-height: 14px;
+  
+}
+
+/* ---------------------------------------------------------
+   9. Tela: REDES SOCIAIS
+   --------------------------------------------------------- */
+.titulo-redes-sociais {
+  position: absolute; top: 62px; left: 100px;
+  width: 180px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 15px; font-weight: 600; line-height: 17px;
+  align-items: center;
+}
+
+.lista-redes-sociais { padding-top: 102px; }
+.lista-redes-sociais__item { margin: 0 0 14px 4px; }
+
+
+.link-rede-social {
+  display: flex; align-items: center; gap: 12px;
+  height: 62px; padding: 0 12px;
+  border: 3px solid #222; border-radius: 18px;
+  background: var(--cor-botao-rosa);
+  font-family: var(--fonte-condensada-leve);
+  font-size: 25px; font-weight: 300; letter-spacing: -.3px;
+  margin-right: 4px;
+}
+.link-rede-social__icone--whatsapp { color: #111; }
+
+.lema-do-salao {
+  position: relative;
+  width: 220px; margin: 20px 0 0 40px;
+  font-family: var(--fonte-italica-delicada);
+  font-size: 16px; font-style: italic; font-weight: 500; line-height: 19px;
+  letter-spacing: .5px; text-align: center;
+  margin-left: 80px;
+}
+
+/* ---------------------------------------------------------
+   10. Tela: FAQ / AVALIAÇÕES
+   --------------------------------------------------------- */
+.assinatura-do-salao { padding-top: 62px; text-align: center; }
+.assinatura-do-salao__nome {
+  color: #b0436b;
+  font-family: var(--fonte-assinatura-manuscrita);
+  font-size: 29px;
+}
+.assinatura-do-salao__lema { margin-top: -2px; color: #d27e9a; font-size: 9px; }
+
+.titulo-avaliacoes {
+  margin-top: 20px;
+  color: #b0436b;
+  font-family: var(--fonte-serifada-classica);
+  font-size: 18px; font-weight: 500; text-align: center;
+}
+.subtitulo-avaliacoes { margin-top: 6px; font-size: 10px; text-align: center; }
+
+.avaliacao-cliente {
+  position: relative;
+  width: 322px; margin: 12px 0 0 6px; padding: 6px 18px 12px;
+  border: 4px solid #fbb6cb; border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #f3d0dc;
+  font-size: 9px; line-height: 11px;
+  text-align: center;
+  height: 80px;
+  margin-left: 15px;
+}
+.avaliacao-cliente--ana { height: 80px; text-align: center; }
+
+.avaliacao-cliente__autor {
+  display: flex; align-items: center; gap: 4px;
+  margin-left: -10px;
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 10px;
+  text-align: center;
+}
+.avaliacao-cliente__autor::before {
+  content: '';
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #444;
+  text-align: center;
+}
+.avaliacao-cliente--maria .avaliacao-cliente__autor::before { background: #c9a0e0; }
+
+.avaliacao-cliente__nota {
+  margin: -2px 0 6px -4px;
+  color: #f6c945;
+  font-size: 11px; letter-spacing: 1px;
+  text-align: center;
+}
+
+.botao-fazer-pergunta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 256px; height: 32px; margin: 18px 0 0 16px;
+  border-radius: 16px;
+  background: #a8607f; color: #fff;
+  font-size: 12px;
+  margin-left: 50px;
+}
+
+/* ---------------------------------------------------------
+   11. Tela: MENU ABERTO
+   --------------------------------------------------------- */
+.menu-principal { padding-top: 130px; }
+.menu-principal__lista { display: flex; flex-direction: column; align-items: center; }
+.menu-principal__item { margin: 0 0 14px; }
+
+.menu-principal__link {
+  display: flex; align-items: center; justify-content: center;
+  width: 142px; height: 36px;
+  border: 2px solid #222; border-radius: 18px;
+  background: var(--cor-botao-rosa);
+  font-family: var(--fonte-tecnica-destaque);
+  font-size: 12px; font-weight: 600;
+}
+.menu-principal__link:hover { background: var(--cor-botao-rosa-destacado); }
+
+.menu-principal__fechar {
+  position: absolute; top: 400px; left: 50%;
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #cfcfcf;
+  transform: translateX(-50%);
+}
+
+/* ---------------------------------------------------------
+   12. Fonte Georgia nas telas internas
+   Todas as telas usam Georgia, exceto INÍCIO (#home) e FAQ (#faq),
+   que mantêm as fontes originais do layout.
+   --------------------------------------------------------- */
+.tela:not(#home):not(#faq),
+.tela:not(#home):not(#faq) * {
+  font-family: var(--fonte-georgia);
+}
+
+/* ---------------------------------------------------------
+   13. Cantos arredondados em todas as telas
+   --------------------------------------------------------- */
+body { padding: 12px 0; }
+
+/* Moldura de cada tela (o conteúdo é cortado nos cantos) */
+.tela { border-radius: 24px; }
+
+/* Fotos e cartões */
+.trabalho__imagem,
+.biografia__retrato,
+.fachada-do-salao,
+.vitrine-unhas { border-radius: 6px; }
+
+/* Barras e detalhes decorativos */
+.divisor-decorativo,
+.identidade-marca__profissao::before,
+.identidade-marca__profissao::after,
+.indicador-de-secao::after,
+.monograma::after { border-radius: 2px; }
+.indicador-de-secao::after { border-radius: 1px; }
+.convite-estrutura { border-radius: 2px; }
+.botao-prosseguir,
+.botao-fazer-pergunta { border-radius: 22px; }
+
+/* ---------------------------------------------------------
+   14. Barra rosa do menu e espessura das bordas
+   --------------------------------------------------------- */
+
+/* A barra rosa "Menu" aparece em toda tela que tem menu
+   (Início, Portfólio, História, Horário, Redes e FAQ). */
+.rodape-menu { background: var(--cor-rodape-rosa-medio); }
+
+/* Moldura de cada tela, com espessura definida em border-width */
+.tela {
+  border-style: solid;
+  border-color: var(--cor-rodape-rosa-medio);
+  border-width: var(--espessura-borda-tela);
+}
+
+
+/* ---------------------------------------------------------
+   15. Responsividade (celular, tablet, notebook e computador)
+   O layout foi desenhado em 352px de largura. O script.js calcula
+   a variável --escala e o aplicativo inteiro é ampliado ou reduzido
+   por igual, mantendo as proporções do design original.
+   --------------------------------------------------------- */
+html {
+  --escala: 1;
+  --altura-minima-da-tela: 760px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;      /* o celular não aumenta os textos por conta própria */
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.aplicativo-do-salao { zoom: var(--escala); }
+
+/* Imagens e mapa nunca passam do tamanho da tela */
+img, iframe { max-width: 100%; }
+
+/* Notebook, computador e tablet: o aplicativo fica centralizado,
+   com fundo suave e sombra para destacar a moldura. */
+@media (min-width: 601px) {
+  body {
+    background: linear-gradient(160deg, #fde4ea 0%, #e9e9e9 55%, #f4b6c8 100%);
+    background-attachment: fixed;
+  }
+  .tela { box-shadow: 0 12px 40px rgba(43, 10, 74, .18); }
+}
+
+/* Celular: a tela ocupa toda a largura do aparelho, sem moldura */
+@media (max-width: 600px) {
+  body { padding: 0; background: var(--cor-fundo-rosa-claro); }
+  .tela { border-radius: 0; border-width: 0; }
+}
+
+/* Quem prefere menos movimento não vê a transição do botão */
+@media (prefers-reduced-motion: reduce) {
+  .botao-prosseguir { transition: none; }
+}
